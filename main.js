@@ -1,9 +1,19 @@
-function create_color() {
-    var random_color =(Math.floor(Math.random()*16777216)).toString(16);
-    console.log(random_color)
-    document.body.style.backgroundColor = "#" + random_color;
-    var text = document.getElementById("text");
-    text.innerText = "#" + random_color;
-    document.getElementById("boton").style.backgroundColor= "#" + random_color;
+let randomColor;
 
+
+function  create_color() {
+    randomColor =(Math.floor(Math.random()*16777216)).toString(16);
+    document.body.style.backgroundColor = "#" + randomColor;
+    let text = document.getElementById("text");
+    text.innerText = "#" + randomColor;
+    document.getElementById("boton").style.backgroundColor= "#" + randomColor;
+}
+
+function copy() {
+    let copyText = document.getElementById("text");
+    copyText.select();
+    
+    copyText.setSelectionRange(0,99999);
+    document.execCommand("copy")
+    
 }
