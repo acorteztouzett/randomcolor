@@ -9,11 +9,19 @@ function  create_color() {
     document.getElementById("boton").style.backgroundColor= "#" + randomColor;
 }
 
-function copy() {
-    let copyText = document.getElementById("text");
-    copyText.select();
-    
-    copyText.setSelectionRange(0,99999);
+function copy(e) {
+    let copyText = document.getElementById("text").innerHTML;
+    const aux = document.createElement("input");
+    aux.setAttribute("value", copyText);
+    document.body.appendChild(aux)
+    aux.select();
     document.execCommand("copy")
-    
+    document.body.removeChild(aux)
+    const button= document.getElementById('boton2')
+    button.innerHTML='Copied'
+
+    setTimeout(()=>{
+        button.innerHTML='Copy'
+
+    },1000)
 }
