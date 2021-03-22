@@ -17,9 +17,10 @@ function copy(e) {
     aux.select();
     document.execCommand("copy")
     document.body.removeChild(aux)
+
+    //Le cambio el texto al boton para dar un indicativo de lo que se hizo
     const button= document.getElementById('boton2')
     button.innerHTML='Copied'
-
     setTimeout(()=>{
         button.innerHTML='Copy'
 
